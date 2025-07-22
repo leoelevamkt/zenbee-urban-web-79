@@ -151,7 +151,7 @@ const Index = () => {
     
     const formatNumber = () => {
       if (stat.isDecimal) {
-        return ((count / stat.number) * 4.9).toFixed(1);
+        return (4.9).toFixed(1);
       }
       
       if (stat.suffix === "k+") {

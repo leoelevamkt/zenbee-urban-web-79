@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 
 const CommitmentSection = () => {
   return (
-    <section className="py-32 bg-[#F9B824] text-[#163656] mb-16">
+    <section className="py-16 bg-[#F9B824] text-[#163656]">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
