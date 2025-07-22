@@ -199,11 +199,6 @@ const Motorista = () => {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Verificar Documentos
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -293,10 +288,6 @@ const Motorista = () => {
               <Car className="mr-2" size={20} />
               Começar Cadastro
             </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white hover:text-foreground">
-              <FileText className="mr-2" size={20} />
-              Documentos Necessários
-            </Button>
           </div>
         </div>
       </section>
@@ -381,15 +372,11 @@ const Motorista = () => {
             </Card>
           </div>
 
-          <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-4">
-              * Valores baseados na média de ganhos dos nossos motoristas em São Paulo
-            </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <DollarSign className="mr-2" size={20} />
-              Calcular Meus Ganhos
-            </Button>
-          </div>
+            <div className="text-center">
+              <p className="text-sm text-muted-foreground mb-4">
+                * Valores baseados na média de ganhos dos nossos motoristas em São Paulo
+              </p>
+            </div>
         </div>
       </section>
 

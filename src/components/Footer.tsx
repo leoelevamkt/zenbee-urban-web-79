@@ -10,11 +10,10 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/bf8ff34a-9281-4c33-a387-f437c0b1199a.png" 
+                src="/lovable-uploads/54fe4cfc-8f29-489f-8bcf-c7ffdf701719.png" 
                 alt="Zenbee" 
-                className="w-8 h-8"
+                className="h-12 w-auto"
               />
-              <span className="text-xl font-bold">Zenbee</span>
             </div>
             <p className="text-sm text-secondary-foreground/80">
               Sua tranquilidade é o nosso caminho.
@@ -36,11 +35,6 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link to="/passageiro" className="text-secondary-foreground/80 hover:text-primary transition-colors">
-                  Passageiro
-                </Link>
-              </li>
               <li>
                 <Link to="/motorista" className="text-secondary-foreground/80 hover:text-primary transition-colors">
                   Motorista

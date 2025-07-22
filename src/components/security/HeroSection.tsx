@@ -4,7 +4,7 @@ import heroDriverSecurity from "@/assets/hero-driver-security.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-20 pb-32 overflow-hidden">
+    <section className="relative pt-28 pb-40 overflow-hidden">
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroDriverSecurity})` }}

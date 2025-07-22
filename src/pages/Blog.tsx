@@ -20,24 +20,6 @@ const Blog = () => {
 
   const blogPosts = [
     {
-      id: "neoenergia-segunda-via",
-      title: "Neoenergia segunda via: como emitir?",
-      excerpt: "Aprenda de forma simples como emitir a segunda via da sua conta de energia da Neoenergia e mantenha suas contas em dia.",
-      category: "ZenPay",
-      date: "21/07/2025",
-      image: blogEnergyBill,
-      readTime: "5 min"
-    },
-    {
-      id: "orcamento-familiar-volta-aulas",
-      title: "Volta às aulas: como planejar um bom orçamento familiar?",
-      excerpt: "Dicas práticas para organizar as finanças familiares e enfrentar os gastos do período escolar sem comprometer o orçamento.",
-      category: "ZenPay", 
-      date: "18/07/2025",
-      image: blogSchoolBudget,
-      readTime: "7 min"
-    },
-    {
       id: "liquido-de-arrefecimento",
       title: "Líquido de arrefecimento do motor: o que é e quando trocar",
       excerpt: "Entenda a importância do líquido de arrefecimento para seu veículo e saiba quando fazer a troca para evitar problemas maiores.",
@@ -73,7 +55,7 @@ const Blog = () => {
       case "Motorista":
         return "bg-[#F76C1B] text-white";
       case "ZenPay":
-        return "bg-[#F9B824] text-[#163656]";
+        return "bg-[#F9B824] text-white";
       default:
         return "bg-gray-100 text-gray-700";
     }
@@ -127,7 +109,7 @@ const Blog = () => {
                         onClick={() => setSelectedCategory(category)}
                         className={
                           selectedCategory === category
-                            ? "bg-[#F9B824] text-[#163656] hover:bg-[#E5B01A]"
+                            ? "bg-[#F9B824] text-white hover:bg-[#E5B01A]"
                             : "border-white/30 text-white hover:bg-white/20"
                         }
                       >
