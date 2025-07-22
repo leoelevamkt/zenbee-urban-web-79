@@ -3,99 +3,77 @@ import { Card, CardContent } from "@/components/ui/card";
 import { 
   Shield, 
   CheckCircle, 
-  Eye, 
+  Search, 
   Phone, 
   MapPin, 
   AlertTriangle,
-  Camera,
   Mic,
   Users,
-  Lock,
-  Headphones,
-  Zap,
+  MessageCircle,
+  FileText,
+  HeartHandshake,
   Clock,
-  Award,
-  Star
+  Star,
+  Ban,
+  Eye
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import securityAbstract from "@/assets/security-abstract.jpg";
-import safetyFeatures from "@/assets/safety-features.jpg";
-import smartCityBanner from "@/assets/smart-city-banner.jpg";
+import driverSecurityHero from "@/assets/driver-security-hero.jpg";
 
 const Seguranca = () => {
-  const passengerSecurity = [
+  const beforeRide = [
     {
-      icon: CheckCircle,
-      title: "Checagem de Motoristas",
-      description: "Verificação rigorosa de documentos, antecedentes criminais e habilitação de todos os motoristas."
+      icon: Search,
+      title: "Checagem de Passageiros",
+      description: "Utilizamos dados e comportamentos para avaliar o perfil de quem solicita a corrida."
     },
     {
+      icon: Eye,
+      title: "Informações Visíveis",
+      description: "Você vê o nome, nota, histórico e se o pagamento será em dinheiro ou app."
+    },
+    {
+      icon: Ban,
+      title: "Cancelamento sem prejuízo",
+      description: "Se algo parecer suspeito, você pode cancelar com isenção da taxa."
+    }
+  ];
+
+  const duringRide = [
+    {
       icon: MapPin,
-      title: "Compartilhamento de Rota",
-      description: "Compartilhe sua viagem em tempo real com familiares e amigos para maior tranquilidade."
+      title: "Rastreamento em tempo real",
+      description: "Sua rota é monitorada e pode ser acompanhada por alguém de confiança."
+    },
+    {
+      icon: Mic,
+      title: "Gravação de Áudio",
+      description: "Ative a função de gravação dentro do app para registrar a corrida (armazenado com segurança)."
     },
     {
       icon: AlertTriangle,
       title: "Botão de Emergência",
-      description: "Acesso rápido a ajuda em situações de emergência, conectando diretamente com nossa central."
-    },
-    {
-      icon: Headphones,
-      title: "Central de Segurança 24h",
-      description: "Suporte especializado em segurança disponível 24 horas por dia, 7 dias por semana."
-    },
-    {
-      icon: Shield,
-      title: "Seguro da Viagem",
-      description: "Cobertura de seguro durante toda a viagem para passageiros e motoristas."
+      description: "Com apenas um toque, acione rapidamente nosso suporte e serviços locais de emergência."
     }
   ];
 
-  const driverSecurity = [
-    {
-      icon: Users,
-      title: "Checagem de Passageiros",
-      description: "Sistema de verificação de usuários para garantir a segurança dos motoristas."
-    },
-    {
-      icon: Camera,
-      title: "Gravação de Áudio e Vídeo",
-      description: "Opção de gravação durante a viagem para proteção de ambas as partes."
-    },
-    {
-      icon: MapPin,
-      title: "Regiões de Risco",
-      description: "Alertas sobre áreas com histórico de incidentes para orientar os motoristas."
-    },
+  const afterRide = [
     {
       icon: Phone,
-      title: "Suporte Dedicado",
-      description: "Canal exclusivo de atendimento para motoristas em situações de emergência."
-    }
-  ];
-
-  const technologyFeatures = [
-    {
-      icon: Eye,
-      title: "Monitoramento Inteligente",
-      description: "Sistema de IA que monitora padrões suspeitos e comportamentos anômalos em tempo real."
+      title: "Central de Segurança 24h",
+      description: "Atendimento exclusivo para situações urgentes com motoristas."
     },
     {
-      icon: Zap,
-      title: "Resposta Rápida",
-      description: "Algoritmos otimizados para detectar e responder a emergências em segundos."
+      icon: FileText,
+      title: "Relato de Ocorrência",
+      description: "Registre um incidente direto no app e acompanhe o atendimento."
     },
     {
-      icon: Lock,
-      title: "Criptografia Avançada",
-      description: "Todos os dados são protegidos com criptografia de ponta a ponta."
-    },
-    {
-      icon: Clock,
-      title: "Prevenção Proativa",
-      description: "Análise preditiva para identificar e prevenir situações de risco."
+      icon: HeartHandshake,
+      title: "Análise e Suporte da Equipe",
+      description: "Nossa equipe avalia e toma providências — com prioridade para sua segurança."
     }
   ];
 
@@ -104,58 +82,50 @@ const Seguranca = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-20 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Viaje e dirija com a <span className="highlight">máxima tranquilidade</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8">
-                Sua segurança é nossa prioridade. Desenvolvemos as mais avançadas tecnologias e protocolos para garantir viagens seguras para todos.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  <Shield className="mr-2" size={20} />
-                  Conheça nossa Segurança
-                </Button>
-                <Button size="lg" variant="outline">
-                  Central de Emergência
-                </Button>
-              </div>
-            </div>
-            <div className="relative">
-              <img
-                src={securityAbstract}
-                alt="Segurança e proteção"
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
+      <section className="relative pt-20 pb-24 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${driverSecurityHero})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-[#163656]/90 to-[#163656]/60"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Segurança para quem dirige com a ZenBee
+            </h1>
+            <h2 className="text-xl md:text-2xl mb-8 font-light opacity-90">
+              Recursos de proteção antes, durante e depois da viagem. Com a ZenBee, você nunca está sozinho na direção.
+            </h2>
+            <Button size="lg" className="bg-[#F9B824] hover:bg-[#F9B824]/90 text-[#163656] font-semibold">
+              <Phone className="mr-2" size={20} />
+              Fale com o suporte de segurança
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Segurança para Passageiros */}
-      <section className="py-20 bg-muted">
+      {/* Antes da Corrida */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Segurança para Passageiros
+            <h2 className="text-3xl md:text-4xl font-bold text-[#163656] mb-4">
+              Antes da Corrida
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Proteção completa em cada etapa da sua viagem
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Antes de aceitar uma viagem, você já conta com filtros e informações que protegem sua decisão.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {passengerSecurity.map((item, index) => (
-              <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <item.icon className="text-primary" size={24} />
+          <div className="grid md:grid-cols-3 gap-8">
+            {beforeRide.map((item, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-[#F9B824]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <item.icon className="text-[#F9B824]" size={32} />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-[#163656]">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -163,31 +133,27 @@ const Seguranca = () => {
         </div>
       </section>
 
-      {/* Segurança para Motoristas */}
-      <section className="py-20 bg-background">
+      {/* Durante a Corrida */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Segurança para Motoristas
+            <h2 className="text-3xl md:text-4xl font-bold text-[#163656] mb-4">
+              Durante a Corrida
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Proteção e suporte dedicado para nossos parceiros
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Tecnologia de segurança ativa em tempo real enquanto você dirige.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {driverSecurity.map((item, index) => (
-              <Card key={index} className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                <CardContent className="p-8">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <item.icon className="text-primary" size={24} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {duringRide.map((item, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-[#F9B824]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <item.icon className="text-[#F9B824]" size={32} />
                   </div>
+                  <h3 className="text-xl font-semibold mb-4 text-[#163656]">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -195,216 +161,102 @@ const Seguranca = () => {
         </div>
       </section>
 
-      {/* Nossa Tecnologia */}
-      <section className="py-20 bg-secondary text-secondary-foreground">
+      {/* Depois da Corrida */}
+      <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Nossa Tecnologia de Segurança
+            <h2 className="text-3xl md:text-4xl font-bold text-[#163656] mb-4">
+              Depois da Corrida
             </h2>
-            <p className="text-xl text-secondary-foreground/80">
-              Inovação e inteligência artificial a serviço da sua proteção
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Caso algo aconteça, você tem canais rápidos e uma equipe ao seu lado.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {technologyFeatures.map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <feature.icon className="text-primary" size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-secondary-foreground/80 text-sm">{feature.description}</p>
-              </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {afterRide.map((item, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-[#F9B824]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <item.icon className="text-[#F9B824]" size={32} />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-[#163656]">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Estatísticas de Segurança */}
-      <section className="py-20 bg-background">
+      {/* Estatísticas */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Números que Comprovam nossa Segurança
+            <h2 className="text-3xl md:text-4xl font-bold text-[#163656] mb-4">
+              Mais de 90% dos motoristas se sentem mais seguros
             </h2>
             <p className="text-xl text-muted-foreground">
-              Resultados que demonstram nosso comprometimento
+              com nossos recursos de proteção
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">99.8%</div>
-              <p className="text-muted-foreground">Viagens sem incidentes</p>
+              <div className="text-5xl font-bold text-[#F9B824] mb-3">99.8%</div>
+              <p className="text-muted-foreground text-lg">Viagens sem incidentes</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">&lt;30s</div>
-              <p className="text-muted-foreground">Tempo médio de resposta</p>
+              <div className="text-5xl font-bold text-[#F9B824] mb-3">&lt;30s</div>
+              <p className="text-muted-foreground text-lg">Tempo médio de resposta</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-              <p className="text-muted-foreground">Central de segurança</p>
+              <div className="text-5xl font-bold text-[#F9B824] mb-3">24/7</div>
+              <p className="text-muted-foreground text-lg">Central de segurança</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">100%</div>
-              <p className="text-muted-foreground">Motoristas verificados</p>
+              <div className="text-5xl font-bold text-[#F9B824] mb-3">100%</div>
+              <p className="text-muted-foreground text-lg">Motoristas verificados</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Seção Tecnologia Avançada */}
+      {/* Depoimento */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <img 
-                src={safetyFeatures} 
-                alt="Tecnologia de segurança" 
-                className="w-full h-96 object-cover shape-star scroll-reveal"
-              />
-              <div className="absolute top-4 right-4 bg-primary text-primary-foreground p-3 rounded-full">
-                <Shield size={24} />
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="flex justify-center mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="text-[#F9B824] fill-current" size={24} />
+                ))}
               </div>
-            </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                <span className="highlight">IA Avançada</span> Protegendo Você
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Nossa inteligência artificial monitora cada viagem em tempo real, detectando padrões suspeitos e acionando protocolos de segurança automaticamente.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4 p-4 bg-muted rounded-lg">
-                  <Eye className="text-primary" size={24} />
-                  <div>
-                    <h3 className="font-semibold">Detecção Comportamental</h3>
-                    <p className="text-sm text-muted-foreground">IA que identifica situações anômalas</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4 p-4 bg-muted rounded-lg">
-                  <Zap className="text-primary" size={24} />
-                  <div>
-                    <h3 className="font-semibold">Resposta Instantânea</h3>
-                    <p className="text-sm text-muted-foreground">Acionamento automático em emergências</p>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-4 p-4 bg-muted rounded-lg">
-                  <Lock className="text-primary" size={24} />
-                  <div>
-                    <h3 className="font-semibold">Criptografia Total</h3>
-                    <p className="text-sm text-muted-foreground">Dados protegidos end-to-end</p>
-                  </div>
-                </div>
-              </div>
+              <blockquote className="text-2xl italic text-muted-foreground mb-6">
+                "Desde que comecei a dirigir com a ZenBee, me sinto muito mais protegido. A central de segurança realmente funciona e o suporte é rápido quando preciso."
+              </blockquote>
+              <cite className="text-lg font-semibold text-[#163656]">
+                Carlos M., motorista parceiro há 2 anos
+              </cite>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Banner de Tecnologia */}
-      <section className="relative py-32 overflow-hidden banner-advanced">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${smartCityBanner})` }}
-        />
-        <div className="container mx-auto px-4 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bounce-in">
-            <span className="highlight">Segurança</span> do Futuro, Hoje
-          </h2>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto scroll-reveal">
-            Tecnologia de ponta combinada com protocolos rigorosos para sua <span className="highlight">máxima proteção</span>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Shield className="mr-2" size={20} />
-              Conheça Nossos Protocolos
-            </Button>
-            <Button size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white hover:text-foreground">
-              <Eye className="mr-2" size={20} />
-              Central de Monitoramento
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Seção Certificações */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              <span className="highlight">Certificações</span> e Reconhecimentos
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Padrões internacionais de segurança e qualidade
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Award className="text-primary" size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">ISO 27001</h3>
-                <p className="text-sm text-muted-foreground">Segurança da Informação</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Shield className="text-primary" size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">LGPD</h3>
-                <p className="text-sm text-muted-foreground">Proteção de Dados</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="text-primary" size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">PCI DSS</h3>
-                <p className="text-sm text-muted-foreground">Segurança de Pagamentos</p>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Star className="text-primary" size={32} />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">SOC 2</h3>
-                <p className="text-sm text-muted-foreground">Auditoria de Segurança</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Emergência */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      {/* Compromisso Final */}
+      <section className="py-24 bg-[#163656] text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Em caso de emergência
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Compromisso com quem faz a cidade se mover
             </h2>
-            <p className="text-xl mb-8 text-primary-foreground/90">
-              Nossa central de segurança está sempre pronta para ajudar
+            <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
+              Na ZenBee, segurança não é um recurso — é uma prioridade. Seguimos melhorando nossas ferramentas e ouvindo os motoristas para construir um ambiente cada vez mais confiável e protegido.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary">
-                <Phone className="mr-2" size={20} />
-                Central: 0800-ZENBEE
-              </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-                <AlertTriangle className="mr-2" size={20} />
-                Botão de Emergência
-              </Button>
-            </div>
+            <Button size="lg" className="bg-[#F9B824] hover:bg-[#F9B824]/90 text-[#163656] font-semibold text-lg px-8 py-4">
+              <MessageCircle className="mr-2" size={20} />
+              Precisa de ajuda? Fale com a gente
+            </Button>
           </div>
         </div>
       </section>
