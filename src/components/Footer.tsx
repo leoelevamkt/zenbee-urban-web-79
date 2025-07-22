@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <img 
-                src="/lovable-uploads/54fe4cfc-8f29-489f-8bcf-c7ffdf701719.png" 
+                src="/lovable-uploads/08f30122-cf83-42f5-a1d1-dc6d0f14f78e.png" 
                 alt="Zenbee" 
-                className="h-12 w-auto"
+                className="h-[57px] w-auto"
               />
             </div>
             <p className="text-sm text-secondary-foreground/80">

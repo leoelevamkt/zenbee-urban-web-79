@@ -23,9 +23,9 @@ const Header = () => {
           {/* Logo - Increased size */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/54fe4cfc-8f29-489f-8bcf-c7ffdf701719.png" 
+              src="/lovable-uploads/08f30122-cf83-42f5-a1d1-dc6d0f14f78e.png" 
               alt="Zenbee Logo" 
-              className="h-16 w-auto md:h-18"
+              className="h-[57px] w-auto"
             />
           </Link>
 
